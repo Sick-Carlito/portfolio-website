@@ -26,7 +26,7 @@ export const Card = ({
       className={cn(
         'bg-white border border-slate-200 rounded-xl',
         paddingStyles[padding],
-        hover && 'hover:border-primary-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300',
+        hover && 'hover:border-blue-400 hover:shadow-lg hover:-translate-y-1 transition-all duration-300',
         className
       )}
       {...props}

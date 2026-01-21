@@ -25,7 +25,7 @@ export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
             'text-slate-900 placeholder:text-slate-400',
             'transition-all duration-200',
             'resize-y min-h-[120px]',
-            'focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent',
+            'focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent',
             'disabled:bg-slate-50 disabled:text-slate-500 disabled:cursor-not-allowed',
             error 
               ? 'border-red-300 focus:ring-red-500' 

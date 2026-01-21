@@ -15,7 +15,7 @@ export const Badge = ({
   ...props 
 }: BadgeProps) => {
   const variants = {
-    primary: 'bg-primary-50 text-primary-700 hover:bg-primary-100',
+    primary: 'bg-blue-50 text-blue-700 hover:bg-blue-100',
     secondary: 'bg-slate-100 text-slate-700 hover:bg-slate-200',
     success: 'bg-green-50 text-green-700 hover:bg-green-100',
     warning: 'bg-yellow-50 text-yellow-700 hover:bg-yellow-100',
