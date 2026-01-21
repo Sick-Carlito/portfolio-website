@@ -55,3 +55,19 @@ out/
 build/
 dist/
 
+
+# Environment
+.env.local
+.env
+
+# Dependencies
+node_modules/
+
+# Next.js
+.next/
+out/
+
+# Production
+build/
+dist/
+
