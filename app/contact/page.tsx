@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Section, Input, Textarea, Select, Button } from '@/components/ui';
 import { FadeIn, ScaleIn } from '@/components/animations';
-import { Mail, Linkedin, Github, Twitter, MapPin, Clock } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Clock } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { socialLinks } from '@/data/social';
 import { CONTACT_FORM_TYPES } from '@/lib/constants';
@@ -17,20 +17,46 @@ export default function ContactPage() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission (you'll connect to real API later)
-    setTimeout(() => {
+    setSubmitStatus('idle');
+    setErrorMessage('');
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setSubmitStatus('success');
+        setFormData({ 
+          name: '', 
+          email: '', 
+          projectType: CONTACT_FORM_TYPES[0], 
+          message: '' 
+        });
+        
+        // Reset success message after 5 seconds
+        setTimeout(() => setSubmitStatus('idle'), 5000);
+      } else {
+        setSubmitStatus('error');
+        setErrorMessage(data.error || 'Failed to send message');
+      }
+    } catch (error) {
+      setSubmitStatus('error');
+      setErrorMessage('Network error. Please try again.');
+    } finally {
       setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', projectType: CONTACT_FORM_TYPES[0], message: '' });
-      
-      // Reset success message after 5 seconds
-      setTimeout(() => setSubmitStatus('idle'), 5000);
-    }, 1500);
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -44,7 +70,6 @@ export default function ContactPage() {
     linkedin: Linkedin,
     github: Github,
     mail: Mail,
-    twitter: Twitter,
   };
 
   return (
@@ -81,6 +106,13 @@ export default function ContactPage() {
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
                       <p className="font-semibold">Message sent successfully!</p>
                       <p className="text-sm mt-1">I'll get back to you within 24 hours.</p>
+                    </div>
+                  )}
+
+                  {submitStatus === 'error' && (
+                    <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-800">
+                      <p className="font-semibold">Error sending message</p>
+                      <p className="text-sm mt-1">{errorMessage}</p>
                     </div>
                   )}
 
@@ -174,6 +206,7 @@ export default function ContactPage() {
                     <div className="flex gap-3">
                       {socialLinks.map((social) => {
                         const Icon = iconMap[social.icon];
+                        if (!Icon) return null;
                         return (
                           <a
                             key={social.name}
@@ -205,27 +238,6 @@ export default function ContactPage() {
                 </div>
               </ScaleIn>
 
-              {/* FAQ */}
-              <ScaleIn delay={800}>
-                <div className="bg-white p-6 rounded-xl border border-slate-200">
-                  <h3 className="text-xl font-bold mb-4">Quick FAQ</h3>
-                  <div className="space-y-4 text-sm">
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">What's your availability?</p>
-                      <p className="text-slate-600">I'm currently booking projects 2-3 weeks out.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">Do you work hourly or fixed price?</p>
-                      <p className="text-slate-600">Both! We can discuss what works best for your project.</p>
-                    </div>
-                    <div>
-                      <p className="font-semibold text-slate-900 mb-1">What's your typical project timeline?</p>
-                      <p className="text-slate-600">Most projects take 2-6 weeks depending on scope.</p>
-                    </div>
-                  </div>
-                </div>
-              </ScaleIn>
-
             </div>
           </div>
         </Container>
@@ -234,3 +246,14 @@ export default function ContactPage() {
     </div>
   );
 }
+
+
+// ============================================
+// OPTIONAL: Setup Resend for Email
+// Run: npm install resend
+// ============================================
+
+// Then uncomment the email sending code in app/api/contact/route.ts
+// And add to .env.local:
+// RESEND_API_KEY=your_api_key_here
+// CONTACT_EMAIL=hello@yourname.com
