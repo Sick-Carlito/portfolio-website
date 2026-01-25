@@ -1,10 +1,19 @@
 import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
+import { marked } from 'marked';
 import { BlogPost, BlogMetadata, PortfolioItem } from '@/types';
 import { calculateReadingTime } from './utils';
 
 const contentDirectory = path.join(process.cwd(), 'src/content');
+
+/**
+ * Configure marked for better HTML output
+ */
+marked.setOptions({
+  gfm: true,
+  breaks: true,
+});
 
 /**
  * Get all blog posts
@@ -15,15 +24,16 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
   
   // Create directory if it doesn't exist
   if (!fs.existsSync(blogDir)) {
+    fs.mkdirSync(blogDir, { recursive: true });
     return [];
   }
 
   const fileNames = fs.readdirSync(blogDir);
   
   const posts = fileNames
-    .filter(fileName => fileName.endsWith('.mdx'))
+    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
     .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, '');
+      const slug = fileName.replace(/\.(mdx|md)$/, '');
       const fullPath = path.join(blogDir, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
@@ -32,7 +42,7 @@ export async function getAllBlogPosts(): Promise<BlogPost[]> {
         slug,
         title: data.title,
         excerpt: data.excerpt,
-        content,
+        content: marked(content), // Convert markdown to HTML
         date: data.date,
         category: data.category,
         author: data.author || 'Your Name',
@@ -87,15 +97,16 @@ export async function getAllPortfolioItems(): Promise<PortfolioItem[]> {
   
   // Create directory if it doesn't exist
   if (!fs.existsSync(portfolioDir)) {
+    fs.mkdirSync(portfolioDir, { recursive: true });
     return [];
   }
 
   const fileNames = fs.readdirSync(portfolioDir);
   
   const items = fileNames
-    .filter(fileName => fileName.endsWith('.mdx'))
+    .filter(fileName => fileName.endsWith('.mdx') || fileName.endsWith('.md'))
     .map((fileName) => {
-      const slug = fileName.replace(/\.mdx$/, '');
+      const slug = fileName.replace(/\.(mdx|md)$/, '');
       const fullPath = path.join(portfolioDir, fileName);
       const fileContents = fs.readFileSync(fullPath, 'utf8');
       const { data, content } = matter(fileContents);
@@ -106,7 +117,7 @@ export async function getAllPortfolioItems(): Promise<PortfolioItem[]> {
         title: data.title,
         description: data.description,
         metrics: data.metrics,
-        content,
+        content: marked(content), // Convert markdown to HTML
         tags: data.tags || [],
         client: data.client || '',
         year: data.year || '',
