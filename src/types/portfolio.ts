@@ -11,6 +11,9 @@ export interface PortfolioItem {
   featured?: boolean;
   image?: string;
   link?: string;
+  challenge?: string;
+  solution?: string;
+  results?: string[];
 }
 
 export interface PortfolioMetadata {

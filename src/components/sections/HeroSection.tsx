@@ -3,6 +3,7 @@ import { Container } from '@/components/ui';
 import { cn } from '@/lib/utils';
 
 interface HeroSectionProps {
+  badge?: string;
   title: string | ReactNode;
   subtitle: string | ReactNode;
   primaryCTA?: {
@@ -17,6 +18,7 @@ interface HeroSectionProps {
 }
 
 export const HeroSection = ({
+  badge,
   title,
   subtitle,
   primaryCTA,
@@ -24,7 +26,7 @@ export const HeroSection = ({
   className
 }: HeroSectionProps) => {
   return (
-    <section 
+    <section
       className={cn(
         'relative min-h-[calc(100vh-5rem)] flex items-center justify-center',
         'bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white',
@@ -39,6 +41,16 @@ export const HeroSection = ({
 
       <Container className="py-20 sm:py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
+          {/* Availability Badge */}
+          {badge && (
+            <div className="flex justify-center mb-6">
+              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-green-500/10 border border-green-500/30 text-green-400 text-sm font-medium">
+                <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse" />
+                {badge}
+              </span>
+            </div>
+          )}
+
           {/* Title */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
             {title}

@@ -89,6 +89,20 @@ export const Navigation = ({ currentPath = '/' }: NavigationProps) => {
             ))}
           </div>
 
+          {/* Desktop CTA */}
+          <div className="hidden md:flex items-center gap-3">
+            <span className="inline-flex items-center gap-1.5 text-xs font-medium text-green-700 bg-green-50 border border-green-200 px-3 py-1.5 rounded-full">
+              <span className="w-1.5 h-1.5 bg-green-500 rounded-full animate-pulse" />
+              Available for work
+            </span>
+            <Link
+              href="/contact"
+              className="px-5 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all hover:scale-105 text-sm"
+            >
+              Hire Me
+            </Link>
+          </div>
+
           {/* Mobile Menu Button */}
           <button 
             className="md:hidden p-2 hover:scale-110 transition-transform"

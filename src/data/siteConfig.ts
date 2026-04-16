@@ -2,8 +2,8 @@ import { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
   name: "YourName",
-  title: "Web Developer & Content Writer | YourName",
-  description: "Web Developer and Content Writer specializing in SEO-driven digital solutions. Building modern websites and creating content that ranks.",
+  title: "Web Developer & SEO Content Writer | YourName",
+  description: "I build fast, modern websites and write SEO content that ranks — a rare combination that helps businesses grow their online presence without hiring two people.",
   url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourwebsite.com",
   author: {
     name: "Your Full Name",
