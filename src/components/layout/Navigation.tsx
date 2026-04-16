@@ -68,7 +68,7 @@ export const Navigation = ({ currentPath = '/' }: NavigationProps) => {
             href="/"
             className="text-xl sm:text-2xl font-bold text-slate-900 hover:scale-105 transition-transform"
           >
-            YourName<span className="text-blue-600">.</span>
+            Carl Bond<span className="text-blue-600">.</span>
           </Link>
           
           {/* Desktop Navigation */}

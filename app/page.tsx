@@ -9,9 +9,9 @@ import { testimonials } from '@/data/testimonials';
 
 export default function HomePage() {
   const stats = [
+    { value: '5+', label: 'Years Experience' },
     { value: '200+', label: 'Articles Published' },
-    { value: '30+', label: 'Websites Built' },
-    { value: '100%', label: 'Client Satisfaction' },
+    { value: '1,300+', label: 'Training Hours' },
   ];
 
   const featuredWork = portfolioItems.filter(item => item.featured);
@@ -65,9 +65,11 @@ export default function HomePage() {
                     </div>
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
                     <p className="text-slate-600 leading-relaxed text-sm mb-5">{service.description}</p>
-                    <p className="text-sm font-semibold text-blue-600">
-                      From ${service.pricing.starting.toLocaleString()} {service.pricing.package}
-                    </p>
+                    {service.pricing && (
+                      <p className="text-sm font-semibold text-blue-600">
+                        From ${service.pricing.starting.toLocaleString()} {service.pricing.package}
+                      </p>
+                    )}
                   </div>
                 </ScaleIn>
               );

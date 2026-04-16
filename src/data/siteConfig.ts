@@ -1,19 +1,19 @@
 import { SiteConfig } from '@/types';
 
 export const siteConfig: SiteConfig = {
-  name: "YourName",
-  title: "Web Developer & SEO Content Writer | YourName",
-  description: "I build fast, modern websites and write SEO content that ranks — a rare combination that helps businesses grow their online presence without hiring two people.",
-  url: process.env.NEXT_PUBLIC_SITE_URL || "https://yourwebsite.com",
+  name: "Carl Bond",
+  title: "Full-Stack Developer & SEO Content Writer | Carl Bond",
+  description: "I build fast, modern web apps and write SEO content that ranks — a rare combination that helps businesses grow online without hiring two people.",
+  url: process.env.NEXT_PUBLIC_SITE_URL || "https://carlbond.dev",
   author: {
-    name: "Your Full Name",
-    email: "hello@yourname.com",
-    linkedin: "https://linkedin.com/in/yourprofile",
-    github: "https://github.com/yourusername",
-    twitter: "https://twitter.com/yourhandle",
+    name: "Carl Bond",
+    email: "carledwards053@gmail.com",
+    linkedin: "https://linkedin.com/in/carlb420/",
+    github: "https://github.com/Sick-Carlito",
+    twitter: "https://twitter.com/cbond_420",
   },
   monetization: {
     monthlyGoal: 500,
-    services: ["Content Writing", "Web Development", "SEO Consultation"],
+    services: ["SEO Content Writing", "Full-Stack Web Development", "Technical Writing"],
   },
 };

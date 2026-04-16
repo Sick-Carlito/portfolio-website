@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Section, Input, Textarea, Select, Button } from '@/components/ui';
 import { FadeIn, ScaleIn } from '@/components/animations';
-import { Mail, Linkedin, Github, MapPin, Clock } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Clock, Phone } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { socialLinks } from '@/data/social';
 import { CONTACT_FORM_TYPES } from '@/lib/constants';
@@ -189,14 +189,22 @@ export default function ContactPage() {
                       <span className="text-sm">{siteConfig.author.email}</span>
                     </a>
                     
+                    <a
+                      href="tel:+254704965601"
+                      className="flex items-center gap-3 text-slate-700 hover:text-blue-600 transition-colors"
+                    >
+                      <Phone className="w-5 h-5 text-blue-600 flex-shrink-0" />
+                      <span className="text-sm">+254 704 965 601</span>
+                    </a>
+
                     <div className="flex items-center gap-3 text-slate-700">
                       <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm">Remote / Worldwide</span>
+                      <span className="text-sm">Nairobi, Kenya — Remote Worldwide</span>
                     </div>
-                    
+
                     <div className="flex items-center gap-3 text-slate-700">
                       <Clock className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                      <span className="text-sm">Mon - Fri, 9AM - 6PM EST</span>
+                      <span className="text-sm">Mon – Fri, EAT (UTC+3) — flexible for US/EU</span>
                     </div>
                   </div>
 
@@ -230,10 +238,10 @@ export default function ContactPage() {
                 <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-6 rounded-xl text-white">
                   <h3 className="text-xl font-bold mb-3">Quick Response</h3>
                   <p className="text-blue-50 mb-3 text-sm">
-                    I typically respond within 24 hours. For urgent inquiries, feel free to reach out via LinkedIn.
+                    I typically respond within 24 hours. I work with clients across the USA and Europe and am comfortable with async collaboration.
                   </p>
                   <p className="text-blue-100 text-sm font-semibold">
-                    Currently accepting new projects for Q1 2026
+                    Currently available for new projects
                   </p>
                 </div>
               </ScaleIn>
