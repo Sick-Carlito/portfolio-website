@@ -15,10 +15,6 @@ export const services: Service[] = [
       "Performance & Core Web Vitals",
       "Deployment & DevOps support",
     ],
-    pricing: {
-      starting: 1500,
-      package: "per project",
-    },
   },
   {
     id: 'seo-content-writing',
@@ -33,10 +29,6 @@ export const services: Service[] = [
       "Conversion-focused copywriting",
       "Regular delivery & reporting",
     ],
-    pricing: {
-      starting: 150,
-      package: "per article",
-    },
   },
   {
     id: 'content-strategy',
@@ -51,9 +43,5 @@ export const services: Service[] = [
       "Analytics setup & tracking",
       "Monthly performance reporting",
     ],
-    pricing: {
-      starting: 300,
-      package: "per month",
-    },
   },
 ];

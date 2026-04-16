@@ -64,12 +64,7 @@ export default function HomePage() {
                       <Icon className="w-6 h-6 text-blue-600" />
                     </div>
                     <h3 className="text-xl font-bold mb-3">{service.title}</h3>
-                    <p className="text-slate-600 leading-relaxed text-sm mb-5">{service.description}</p>
-                    {service.pricing && (
-                      <p className="text-sm font-semibold text-blue-600">
-                        From ${service.pricing.starting.toLocaleString()} {service.pricing.package}
-                      </p>
-                    )}
+                    <p className="text-slate-600 leading-relaxed text-sm">{service.description}</p>
                   </div>
                 </ScaleIn>
               );
