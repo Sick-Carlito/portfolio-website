@@ -5,8 +5,8 @@ import { FadeIn } from '@/components/animations';
 import { portfolioItems } from '@/data/portfolio';
 
 export const metadata = {
-  title: 'Portfolio | YourName',
-  description: 'View my latest web development and content writing projects.',
+  title: 'Portfolio | Carl Bond',
+  description: 'Full-stack web development and SEO content writing projects by Carl Bond.',
 };
 
 export default function PortfolioPage() {

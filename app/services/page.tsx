@@ -5,8 +5,8 @@ import { FadeIn, ScaleIn } from '@/components/animations';
 import { services } from '@/data/services';
 
 export const metadata = {
-  title: 'Services | YourName',
-  description: 'Professional web development and content writing services to grow your online presence.',
+  title: 'Services | Carl Bond',
+  description: 'Full-stack development and SEO content writing services by Carl Bond — available for freelance projects.',
 };
 
 export default function ServicesPage() {
