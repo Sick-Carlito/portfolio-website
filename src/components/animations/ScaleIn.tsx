@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScaleInProps {
@@ -17,30 +17,14 @@ export const ScaleIn = ({
   duration = 500
 }: ScaleInProps) => {
   const [isVisible, setIsVisible] = useState(false);
-  const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          const timer = setTimeout(() => setIsVisible(true), delay);
-          observer.disconnect();
-          return () => clearTimeout(timer);
-        }
-      },
-      { threshold: 0.1 }
-    );
-
-    observer.observe(el);
-    return () => observer.disconnect();
+    const timer = setTimeout(() => setIsVisible(true), delay);
+    return () => clearTimeout(timer);
   }, [delay]);
 
   return (
     <div
-      ref={ref}
       className={cn(
         'transition-all',
         isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95',

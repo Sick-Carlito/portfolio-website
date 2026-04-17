@@ -44,14 +44,12 @@ export default function HomePage() {
       <Section variant="white" spacing="lg">
         <Container>
           <div className="text-center mb-12 sm:mb-16">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
-                What I Do
-              </h2>
-              <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
-                Two skills that most freelancers offer separately — I bring them together.
-              </p>
-            </FadeIn>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4">
+              What I Do
+            </h2>
+            <p className="text-lg sm:text-xl text-slate-600 max-w-2xl mx-auto">
+              Two skills that most freelancers offer separately — I bring them together.
+            </p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-6 lg:gap-8 max-w-5xl mx-auto">
@@ -77,7 +75,7 @@ export default function HomePage() {
                 href="/services"
                 className="inline-flex items-center gap-2 text-blue-600 font-semibold hover:underline"
               >
-                See full pricing & packages →
+                See all services →
               </Link>
             </div>
           </FadeIn>
@@ -88,10 +86,8 @@ export default function HomePage() {
       <Section variant="gray" spacing="lg">
         <Container>
           <div className="mb-12">
-            <FadeIn>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Work</h2>
-              <p className="text-lg text-slate-600">Results I've delivered for real clients.</p>
-            </FadeIn>
+            <h2 className="text-3xl sm:text-4xl font-bold mb-4">Featured Work</h2>
+            <p className="text-lg text-slate-600">Results I've delivered for real clients.</p>
           </div>
 
           <div className="space-y-8 lg:space-y-10">
