@@ -2,7 +2,7 @@ import { Container, Section } from '@/components/ui';
 import { TestimonialsSection } from '@/components/sections';
 import { FadeIn, ScaleIn } from '@/components/animations';
 import { testimonials } from '@/data/testimonials';
-import { Code, TrendingUp } from 'lucide-react';
+import { Code, TrendingUp, Download } from 'lucide-react';
 
 export const metadata = {
   title: 'About Carl Bond | Full-Stack Developer & SEO Content Writer',
@@ -46,9 +46,17 @@ export default function AboutPage() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                 About Carl Bond
               </h1>
-              <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed">
+              <p className="text-xl sm:text-2xl text-slate-600 leading-relaxed mb-8">
                 Full-Stack Developer & SEO Content Writer — Kenya-based, working globally
               </p>
+              <a
+                href="/carl-bond-cv.pdf"
+                download
+                className="inline-flex items-center gap-2 px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-lg"
+              >
+                <Download className="w-5 h-5" />
+                Download CV
+              </a>
             </div>
           </FadeIn>
         </Container>
