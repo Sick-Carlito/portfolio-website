@@ -1,12 +1,8 @@
 import { MetadataRoute } from 'next';
-import { getAllBlogPosts } from '@/lib/mdx';
 import { portfolioItems } from '@/data/portfolio';
 import { siteConfig } from '@/data/siteConfig';
 
-export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
-  const blogPosts = await getAllBlogPosts();
-  
-  // Static pages
+export default function sitemap(): MetadataRoute.Sitemap {
   const staticPages = [
     {
       url: siteConfig.url,
@@ -33,12 +29,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 0.9,
     },
     {
-      url: `${siteConfig.url}/blog`,
-      lastModified: new Date(),
-      changeFrequency: 'daily' as const,
-      priority: 0.9,
-    },
-    {
       url: `${siteConfig.url}/contact`,
       lastModified: new Date(),
       changeFrequency: 'monthly' as const,
@@ -46,15 +36,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
   ];
 
-  // Blog post pages
-  const blogPages = blogPosts.map((post) => ({
-    url: `${siteConfig.url}/blog/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'weekly' as const,
-    priority: 0.7,
-  }));
-
-  // Portfolio pages
   const portfolioPages = portfolioItems.map((item) => ({
     url: `${siteConfig.url}/portfolio/${item.slug}`,
     lastModified: new Date(),
@@ -62,5 +43,5 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.8,
   }));
 
-  return [...staticPages, ...blogPages, ...portfolioPages];
+  return [...staticPages, ...portfolioPages];
 }
