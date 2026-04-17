@@ -21,4 +21,9 @@ export const socialLinks: SocialLink[] = [
     url: 'mailto:carledwards053@gmail.com',
     icon: 'mail',
   },
+  {
+    name: 'Upwork',
+    url: 'https://www.upwork.com/freelancers/~017926779fbfd17d4b',
+    icon: 'upwork',
+  },
 ];

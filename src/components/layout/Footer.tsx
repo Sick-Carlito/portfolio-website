@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Linkedin, Github, Mail, Twitter } from 'lucide-react';
+import { Linkedin, Github, Mail, Twitter, Briefcase } from 'lucide-react';
 import { navigationLinks, footerLinks } from '@/data/navigation';
 import { socialLinks } from '@/data/social';
 import { siteConfig } from '@/data/siteConfig';
@@ -14,6 +14,7 @@ export const Footer = () => {
     github: Github,
     mail: Mail,
     twitter: Twitter,
+    upwork: Briefcase,
   };
 
   return (

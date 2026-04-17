@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Section, Input, Textarea, Select, Button } from '@/components/ui';
 import { FadeIn, ScaleIn } from '@/components/animations';
-import { Mail, Linkedin, Github, MapPin, Clock, Phone } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Clock, Phone, Briefcase } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { socialLinks } from '@/data/social';
 import { CONTACT_FORM_TYPES } from '@/lib/constants';
@@ -70,6 +70,7 @@ export default function ContactPage() {
     linkedin: Linkedin,
     github: Github,
     mail: Mail,
+    upwork: Briefcase,
   };
 
   return (
@@ -231,6 +232,24 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+              </ScaleIn>
+
+              {/* Upwork CTA */}
+              <ScaleIn delay={500}>
+                <a
+                  href="https://www.upwork.com/freelancers/~017926779fbfd17d4b"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-[#14a800] hover:bg-[#12980] p-5 rounded-xl text-white transition-all hover:scale-105 hover:shadow-lg group"
+                >
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Briefcase className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm">Hire me on Upwork</p>
+                    <p className="text-green-100 text-xs mt-0.5">View my profile & reviews →</p>
+                  </div>
+                </a>
               </ScaleIn>
 
               {/* Quick Response */}
