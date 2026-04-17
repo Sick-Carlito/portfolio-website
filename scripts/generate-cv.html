@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carl Bond — CV</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      font-size: 10.5pt;
+      color: #1e293b;
+      background: #fff;
+      line-height: 1.5;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 36px 44px;
+    }
+
+    /* ── Header ── */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #2563eb;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .header-left h1 {
+      font-size: 26pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .header-left h1 span { color: #2563eb; }
+    .header-left .title {
+      font-size: 11pt;
+      color: #475569;
+      font-weight: 500;
+      margin-top: 3px;
+    }
+    .header-right {
+      text-align: right;
+      font-size: 9pt;
+      color: #475569;
+      line-height: 1.8;
+    }
+    .header-right a { color: #2563eb; text-decoration: none; }
+
+    /* ── Section titles ── */
+    .section { margin-bottom: 20px; }
+    .section-title {
+      font-size: 10pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #2563eb;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 4px;
+      margin-bottom: 12px;
+    }
+
+    /* ── Summary ── */
+    .summary p {
+      color: #334155;
+      font-size: 10pt;
+      line-height: 1.65;
+    }
+
+    /* ── Experience ── */
+    .exp-item { margin-bottom: 14px; }
+    .exp-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2px;
+    }
+    .exp-role {
+      font-weight: 700;
+      font-size: 10.5pt;
+      color: #0f172a;
+    }
+    .exp-period {
+      font-size: 9pt;
+      color: #64748b;
+      white-space: nowrap;
+    }
+    .exp-company {
+      font-size: 9.5pt;
+      color: #2563eb;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+    .exp-bullets {
+      list-style: none;
+      padding-left: 0;
+    }
+    .exp-bullets li {
+      font-size: 9.5pt;
+      color: #334155;
+      padding-left: 13px;
+      position: relative;
+      margin-bottom: 2px;
+    }
+    .exp-bullets li::before {
+      content: "▸";
+      position: absolute;
+      left: 0;
+      color: #2563eb;
+      font-size: 8pt;
+      top: 1px;
+    }
+
+    /* ── Skills ── */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px 24px;
+    }
+    .skill-group h4 {
+      font-size: 9.5pt;
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 5px;
+    }
+    .skill-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 4px;
+    }
+    .skill-tag {
+      background: #eff6ff;
+      color: #1d4ed8;
+      font-size: 8.5pt;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+
+    /* ── Portfolio ── */
+    .portfolio-item { margin-bottom: 10px; }
+    .portfolio-item .proj-title {
+      font-weight: 700;
+      font-size: 10pt;
+      color: #0f172a;
+    }
+    .portfolio-item .proj-link {
+      font-size: 8.5pt;
+      color: #2563eb;
+      text-decoration: none;
+      margin-left: 6px;
+    }
+    .portfolio-item p {
+      font-size: 9.5pt;
+      color: #334155;
+      margin-top: 2px;
+    }
+
+    /* ── Education / Training ── */
+    .edu-item { margin-bottom: 10px; }
+    .edu-header {
+      display: flex;
+      justify-content: space-between;
+    }
+    .edu-name { font-weight: 700; font-size: 10pt; color: #0f172a; }
+    .edu-period { font-size: 9pt; color: #64748b; }
+    .edu-detail { font-size: 9.5pt; color: #334155; margin-top: 1px; }
+
+    @media print {
+      body { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+      .page { padding: 24px 32px; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Header -->
+  <div class="header">
+    <div class="header-left">
+      <h1>Carl Bond<span>.</span></h1>
+      <div class="title">Full-Stack Developer &amp; SEO Content Writer</div>
+    </div>
+    <div class="header-right">
+      <div>📍 Nairobi, Kenya — Remote Worldwide</div>
+      <div>✉ <a href="mailto:carledwards053@gmail.com">carledwards053@gmail.com</a></div>
+      <div>📞 +254 704 965 601</div>
+      <div>🔗 <a href="https://linkedin.com/in/carlb420/">linkedin.com/in/carlb420</a></div>
+      <div>🐙 <a href="https://github.com/Sick-Carlito">github.com/Sick-Carlito</a></div>
+      <div>🌐 <a href="https://carlbond.dev">carlbond.dev</a></div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="section summary">
+    <div class="section-title">Professional Summary</div>
+    <p>
+      Full-Stack Developer and SEO Content Writer with 5+ years of remote client delivery for businesses across the USA and Europe. I build fast, modern web applications with React, Next.js, and Node.js — and write technical and SEO content that ranks and converts. The combination of engineering depth and content expertise means I can own a digital product end-to-end, from architecture to the articles that drive it traffic.
+    </p>
+  </div>
+
+  <!-- Experience -->
+  <div class="section">
+    <div class="section-title">Experience</div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Frontend Web Developer</div>
+        <div class="exp-period">2024</div>
+      </div>
+      <div class="exp-company">Ngamia Africa</div>
+      <ul class="exp-bullets">
+        <li>Built responsive web interfaces for internal management systems using React</li>
+        <li>Integrated RESTful APIs and handled full-stack debugging across frontend and backend layers</li>
+        <li>Assisted with DevOps tasks, deployment automation, and CI workflows</li>
+        <li>Owned Git workflow including branching strategy, code reviews, and repository management</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Frontend Web Developer</div>
+        <div class="exp-period">2023</div>
+      </div>
+      <div class="exp-company">Pullova Technologies</div>
+      <ul class="exp-bullets">
+        <li>Developed production-ready interfaces using ReactJS, HTML5, CSS3, and Bootstrap 4</li>
+        <li>Collaborated via GitHub and deployed applications on Heroku</li>
+        <li>Implemented UI/UX best practices and responsive layouts across desktop and mobile</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-header">
+        <div class="exp-role">Freelance Developer &amp; Technical Content Writer</div>
+        <div class="exp-period">2019 – Present</div>
+      </div>
+      <div class="exp-company">Upwork &amp; Independent Clients (USA, Europe)</div>
+      <ul class="exp-bullets">
+        <li>5+ year track record delivering technical content for clients including a 4.5-year Hong Kong engagement worth $24K+</li>
+        <li>Topics: Windows OS, Microsoft 365, cloud tools, PowerShell, Active Directory, SaaS, eCommerce</li>
+        <li>Full-stack development projects for small businesses and startups across the USA and Europe</li>
+        <li>Built and launched Hydroponics Central — a full Next.js content platform with 1,000+ newsletter subscribers, all content researched and written personally</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Skills -->
+  <div class="section">
+    <div class="section-title">Skills</div>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h4>Development</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">React</span>
+          <span class="skill-tag">Next.js</span>
+          <span class="skill-tag">TypeScript</span>
+          <span class="skill-tag">JavaScript</span>
+          <span class="skill-tag">Node.js</span>
+          <span class="skill-tag">Ruby on Rails</span>
+          <span class="skill-tag">Python / Flask</span>
+          <span class="skill-tag">PostgreSQL</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">Firebase</span>
+          <span class="skill-tag">REST APIs</span>
+          <span class="skill-tag">TDD / RSpec</span>
+          <span class="skill-tag">Tailwind CSS</span>
+          <span class="skill-tag">Git / GitHub</span>
+          <span class="skill-tag">Heroku / Vercel</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h4>Content &amp; SEO</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">SEO Copywriting</span>
+          <span class="skill-tag">Technical Writing</span>
+          <span class="skill-tag">Keyword Research</span>
+          <span class="skill-tag">Topic Clusters</span>
+          <span class="skill-tag">On-Page SEO</span>
+          <span class="skill-tag">Structured Data</span>
+          <span class="skill-tag">Content Strategy</span>
+          <span class="skill-tag">Analytics</span>
+          <span class="skill-tag">Microsoft 365</span>
+          <span class="skill-tag">IT Documentation</span>
+          <span class="skill-tag">Competitor Analysis</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Portfolio Highlights -->
+  <div class="section">
+    <div class="section-title">Portfolio Highlights</div>
+
+    <div class="portfolio-item">
+      <div>
+        <span class="proj-title">Hydroponics Central</span>
+        <a class="proj-link" href="https://hydroponics-central.vercel.app/">hydroponics-central.vercel.app ↗</a>
+      </div>
+      <p>Full Next.js content platform built, written, and launched solo. 1,000+ newsletter subscribers. Long-form articles averaging 12–15 min read time. Demonstrates end-to-end ownership: architecture, deployment, SEO strategy, and all content.</p>
+    </div>
+
+    <div class="portfolio-item">
+      <div>
+        <span class="proj-title">Ngamia Africa — Internal Management System</span>
+      </div>
+      <p>Production-grade internal web platform: React interfaces, REST API integration, DevOps support, and full Git workflow ownership.</p>
+    </div>
+
+    <div class="portfolio-item">
+      <div>
+        <span class="proj-title">Upwork — Technical Content (5+ years)</span>
+      </div>
+      <p>Long-term engagements across US and European clients. Topics include Windows OS, Microsoft 365, cloud infrastructure, and Active Directory. 5-star rated across all contracts.</p>
+    </div>
+  </div>
+
+  <!-- Training -->
+  <div class="section">
+    <div class="section-title">Training &amp; Education</div>
+
+    <div class="edu-item">
+      <div class="edu-header">
+        <div class="edu-name">Full-Stack Web Development — Microverse (Remote)</div>
+        <div class="edu-period">1,300+ hours</div>
+      </div>
+      <div class="edu-detail">Intensive curriculum covering Ruby, Ruby on Rails, JavaScript, React, Redux, and SQL. 40 hrs/week remote pair programming with developers across four continents. Mentored junior developers on code quality.</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
