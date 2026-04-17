@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface FadeInProps {
@@ -14,33 +14,17 @@ interface FadeInProps {
 export const FadeIn = ({
   children,
   delay = 0,
-  direction = 'up',
   className,
   duration = 600
 }: FadeInProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
-  const directionClasses = {
-    up: 'translate-y-6',
-    down: '-translate-y-6',
-    left: 'translate-x-6',
-    right: '-translate-x-6',
-    none: '',
-  };
-
   return (
     <div
-      className={cn(
-        'transition-all',
-        isVisible ? 'opacity-100 translate-y-0 translate-x-0' : `opacity-0 ${directionClasses[direction]}`,
-        className
-      )}
-      style={{ transitionDuration: `${duration}ms` }}
+      className={cn('animate-fadeInUp', className)}
+      style={{
+        animationDelay: `${delay}ms`,
+        animationDuration: `${duration}ms`,
+        animationFillMode: 'both',
+      }}
     >
       {children}
     </div>

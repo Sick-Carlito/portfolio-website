@@ -1,6 +1,6 @@
 'use client';
 
-import { ReactNode, useEffect, useState } from 'react';
+import { ReactNode } from 'react';
 import { cn } from '@/lib/utils';
 
 interface ScaleInProps {
@@ -16,21 +16,14 @@ export const ScaleIn = ({
   className,
   duration = 500
 }: ScaleInProps) => {
-  const [isVisible, setIsVisible] = useState(false);
-
-  useEffect(() => {
-    const timer = setTimeout(() => setIsVisible(true), delay);
-    return () => clearTimeout(timer);
-  }, [delay]);
-
   return (
     <div
-      className={cn(
-        'transition-all',
-        isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95',
-        className
-      )}
-      style={{ transitionDuration: `${duration}ms` }}
+      className={cn('animate-scaleIn', className)}
+      style={{
+        animationDelay: `${delay}ms`,
+        animationDuration: `${duration}ms`,
+        animationFillMode: 'both',
+      }}
     >
       {children}
     </div>
