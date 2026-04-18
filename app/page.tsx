@@ -32,7 +32,7 @@ export default function HomePage() {
         subtitle="Most developers can't write. Most writers can't build. I do both — combining Next.js development with SEO-driven content to help clients grow online."
         primaryCTA={{ text: 'Hire Me', href: '/contact' }}
         secondaryCTA={{ text: 'View My Work', href: '/portfolio' }}
-        techStack={['React', 'Next.js', 'TypeScript', 'Node.js', 'Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'SEO & Content']}
+        skills={['React', 'Next.js', 'TypeScript', 'Node.js', 'Ruby on Rails', 'PostgreSQL', 'Tailwind CSS', 'SEO & Content']}
       />
 
       {/* Stats */}

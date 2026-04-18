@@ -14,7 +14,7 @@ interface HeroSectionProps {
     text: string;
     href: string;
   };
-  techStack?: string[];
+  skills?: string[];
   className?: string;
 }
 
@@ -24,7 +24,7 @@ export const HeroSection = ({
   subtitle,
   primaryCTA,
   secondaryCTA,
-  techStack,
+  skills,
   className
 }: HeroSectionProps) => {
   return (
@@ -86,13 +86,13 @@ export const HeroSection = ({
           )}
 
           {/* Tech Stack */}
-          {techStack && techStack.length > 0 && (
+          {skills && skills.length > 0 && (
             <div className="border-t border-slate-700/60 pt-8">
               <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">
-                Built with
+                My skills
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {techStack.map((tech, i) => {
+                {skills.map((tech, i) => {
                   const colors = [
                     'bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30',
                     'bg-violet-500/20 text-violet-300 border-violet-500/40 hover:bg-violet-500/30',
