@@ -159,6 +159,7 @@ export default function HomePage() {
                   metrics={item.metrics}
                   tags={item.tags}
                   featured={item.featured}
+                  image={item.image}
                 />
               </FadeIn>
             ))}
