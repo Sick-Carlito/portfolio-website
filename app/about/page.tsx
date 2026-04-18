@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import { Container, Section } from '@/components/ui';
 import { TestimonialsSection } from '@/components/sections';
 import { FadeIn, ScaleIn } from '@/components/animations';
@@ -43,6 +44,15 @@ export default function AboutPage() {
         <Container size="md">
           <FadeIn>
             <div className="text-center">
+              <div className="relative w-32 h-32 sm:w-40 sm:h-40 mx-auto mb-6 rounded-full overflow-hidden ring-4 ring-blue-100 shadow-xl">
+                <Image
+                  src="/carl-bond.jpg"
+                  alt="Carl Bond"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
                 About Carl Bond
               </h1>

@@ -10,6 +10,7 @@ export const portfolioItems: PortfolioItem[] = [
     year: '2025',
     client: 'Personal Project',
     featured: true,
+    image: '/hydroponics-central.png',
     link: 'https://hydroponics-central.vercel.app/',
     tags: ['Next.js', 'Content Strategy', 'SEO', 'Long-form Writing', 'Vercel'],
     challenge: 'Most freelancers claim they can build and write. I wanted a live, verifiable project that proved both — something a potential client could actually open, read, and judge. The hydroponics niche was deliberate: specific enough to rank, with a real audience actively searching for answers.',
