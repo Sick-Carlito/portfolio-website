@@ -81,6 +81,40 @@ export const metadata: Metadata = {
   },
 };
 
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Carl Bond',
+  url: siteConfig.url,
+  image: `${siteConfig.url}/carl-bond.jpg`,
+  jobTitle: 'Full-Stack Developer & SEO Content Writer',
+  description: siteConfig.description,
+  email: 'carledwards053@gmail.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Nairobi',
+    addressCountry: 'KE',
+  },
+  sameAs: [
+    siteConfig.author.linkedin,
+    siteConfig.author.github,
+    siteConfig.author.twitter,
+    'https://www.upwork.com/freelancers/carlbond',
+  ],
+  knowsAbout: [
+    'Next.js', 'React', 'TypeScript', 'Node.js', 'Ruby on Rails',
+    'SEO Content Writing', 'Technical Writing', 'PostgreSQL', 'Tailwind CSS',
+  ],
+  offers: {
+    '@type': 'Offer',
+    itemOffered: [
+      { '@type': 'Service', name: 'Full-Stack Web Development' },
+      { '@type': 'Service', name: 'SEO Content Writing' },
+      { '@type': 'Service', name: 'Technical Writing' },
+    ],
+  },
+};
+
 export default function RootLayout({
   children,
 }: {
@@ -90,6 +124,10 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth">
       <head>
         <link rel="canonical" href={siteConfig.url} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        />
       </head>
       <body className={inter.className}>
         <div className="min-h-screen flex flex-col">
