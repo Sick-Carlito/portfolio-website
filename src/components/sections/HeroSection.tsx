@@ -92,14 +92,26 @@ export const HeroSection = ({
                 Built with
               </p>
               <div className="flex flex-wrap justify-center gap-2">
-                {techStack.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1.5 rounded-md text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition-colors"
-                  >
-                    {tech}
-                  </span>
-                ))}
+                {techStack.map((tech, i) => {
+                  const colors = [
+                    'bg-blue-500/20 text-blue-300 border-blue-500/40 hover:bg-blue-500/30',
+                    'bg-violet-500/20 text-violet-300 border-violet-500/40 hover:bg-violet-500/30',
+                    'bg-cyan-500/20 text-cyan-300 border-cyan-500/40 hover:bg-cyan-500/30',
+                    'bg-emerald-500/20 text-emerald-300 border-emerald-500/40 hover:bg-emerald-500/30',
+                    'bg-rose-500/20 text-rose-300 border-rose-500/40 hover:bg-rose-500/30',
+                    'bg-amber-500/20 text-amber-300 border-amber-500/40 hover:bg-amber-500/30',
+                    'bg-pink-500/20 text-pink-300 border-pink-500/40 hover:bg-pink-500/30',
+                    'bg-teal-500/20 text-teal-300 border-teal-500/40 hover:bg-teal-500/30',
+                  ];
+                  return (
+                    <span
+                      key={tech}
+                      className={`px-3 py-1.5 rounded-md text-xs font-semibold border transition-colors ${colors[i % colors.length]}`}
+                    >
+                      {tech}
+                    </span>
+                  );
+                })}
               </div>
             </div>
           )}
