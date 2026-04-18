@@ -54,6 +54,7 @@ export default function PortfolioPage() {
                     metrics={item.metrics}
                     tags={item.tags}
                     featured={item.featured}
+                    image={item.image}
                   />
                 </FadeIn>
               ))}
@@ -82,6 +83,7 @@ export default function PortfolioPage() {
                   description={item.description}
                   metrics={item.metrics}
                   tags={item.tags}
+                  image={item.image}
                 />
               </FadeIn>
             ))}
