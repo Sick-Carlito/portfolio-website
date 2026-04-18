@@ -14,6 +14,7 @@ interface HeroSectionProps {
     text: string;
     href: string;
   };
+  techStack?: string[];
   className?: string;
 }
 
@@ -23,6 +24,7 @@ export const HeroSection = ({
   subtitle,
   primaryCTA,
   secondaryCTA,
+  techStack,
   className
 }: HeroSectionProps) => {
   return (
@@ -63,9 +65,9 @@ export const HeroSection = ({
 
           {/* CTAs */}
           {(primaryCTA || secondaryCTA) && (
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
               {primaryCTA && (
-                <a 
+                <a
                   href={primaryCTA.href}
                   className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 bg-blue-600 hover:bg-blue-700 rounded-lg font-semibold transition-all hover:scale-105 hover:shadow-xl text-center"
                 >
@@ -73,13 +75,32 @@ export const HeroSection = ({
                 </a>
               )}
               {secondaryCTA && (
-                <a 
+                <a
                   href={secondaryCTA.href}
                   className="w-full sm:w-auto px-6 py-3 sm:px-8 sm:py-4 border-2 border-slate-600 hover:border-slate-500 rounded-lg font-semibold transition-all hover:scale-105 text-center"
                 >
                   {secondaryCTA.text}
                 </a>
               )}
+            </div>
+          )}
+
+          {/* Tech Stack */}
+          {techStack && techStack.length > 0 && (
+            <div className="border-t border-slate-700/60 pt-8">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500 mb-4">
+                Built with
+              </p>
+              <div className="flex flex-wrap justify-center gap-2">
+                {techStack.map((tech) => (
+                  <span
+                    key={tech}
+                    className="px-3 py-1.5 rounded-md text-xs font-medium bg-slate-800/80 text-slate-300 border border-slate-700 hover:border-slate-500 hover:text-white transition-colors"
+                  >
+                    {tech}
+                  </span>
+                ))}
+              </div>
             </div>
           )}
         </div>
