@@ -92,14 +92,6 @@ export const Footer = () => {
             <p className="text-slate-400 text-sm">
               &copy; {currentYear} {siteConfig.name}. All rights reserved.
             </p>
-            <div className="flex gap-6 text-sm text-slate-400">
-              <Link href="/privacy" className="hover:text-white transition-colors">
-                Privacy Policy
-              </Link>
-              <Link href="/terms" className="hover:text-white transition-colors">
-                Terms of Service
-              </Link>
-            </div>
           </div>
         </div>
       </Container>
