@@ -76,13 +76,17 @@ export const Navigation = () => {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'font-medium transition-all hover:scale-105 text-sm lg:text-base relative pb-1',
+                  'font-medium transition-all hover:scale-105 text-sm lg:text-base relative pb-1 flex flex-col items-center gap-0.5',
                   isActive(item.href)
-                    ? 'text-blue-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full'
+                    ? 'text-blue-600'
                     : 'text-slate-600 hover:text-slate-900'
                 )}
               >
                 {item.name}
+                <span className={cn(
+                  'h-0.5 w-full rounded-full bg-blue-600 transition-all duration-300',
+                  isActive(item.href) ? 'opacity-100' : 'opacity-0'
+                )} />
               </Link>
             ))}
           </div>
