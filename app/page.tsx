@@ -83,6 +83,69 @@ export default function HomePage() {
         </Container>
       </Section>
 
+      {/* Tech Stack */}
+      <Section variant="white" spacing="md">
+        <Container>
+          <div className="text-center mb-10">
+            <p className="text-sm font-semibold uppercase tracking-widest text-slate-400 mb-2">Built with</p>
+            <h2 className="text-2xl sm:text-3xl font-bold text-slate-900">Tech Stack</h2>
+          </div>
+
+          <div className="max-w-4xl mx-auto space-y-6">
+            {[
+              {
+                label: 'Frontend',
+                color: 'blue',
+                techs: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'HTML5 / CSS3'],
+              },
+              {
+                label: 'Backend',
+                color: 'violet',
+                techs: ['Node.js', 'Ruby on Rails', 'Python / Flask', 'REST APIs'],
+              },
+              {
+                label: 'Data & Cloud',
+                color: 'emerald',
+                techs: ['PostgreSQL', 'MySQL', 'Firebase', 'Vercel', 'Heroku'],
+              },
+              {
+                label: 'Tools & Workflow',
+                color: 'orange',
+                techs: ['Git / GitHub', 'TDD / RSpec', 'Agile / Scrum', 'SEO & Analytics'],
+              },
+            ].map((group) => (
+              <div key={group.label} className="flex flex-col sm:flex-row sm:items-center gap-3">
+                <span className={`text-xs font-bold uppercase tracking-widest w-28 flex-shrink-0 ${
+                  group.color === 'blue' ? 'text-blue-500' :
+                  group.color === 'violet' ? 'text-violet-500' :
+                  group.color === 'emerald' ? 'text-emerald-500' : 'text-orange-500'
+                }`}>
+                  {group.label}
+                </span>
+                <div className="flex flex-wrap gap-2">
+                  {group.techs.map((tech) => (
+                    <span
+                      key={tech}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${
+                        group.color === 'blue'
+                          ? 'bg-blue-50 text-blue-700 border-blue-200'
+                          : group.color === 'violet'
+                          ? 'bg-violet-50 text-violet-700 border-violet-200'
+                          : group.color === 'emerald'
+                          ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                          : 'bg-orange-50 text-orange-700 border-orange-200'
+                      }`}
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </Section>
+
       {/* Why Carl */}
       <Section variant="dark" spacing="lg">
         <Container>
