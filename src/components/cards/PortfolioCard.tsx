@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, TrendingUp } from 'lucide-react';
 import { Badge } from '@/components/ui';
 import { cn } from '@/lib/utils';
@@ -41,10 +42,11 @@ export const PortfolioCard = ({
           className="md:col-span-2 h-64 md:h-auto bg-gradient-to-br from-blue-500 to-purple-600 relative overflow-hidden"
         >
           {image ? (
-            <img 
-              src={image} 
-              alt={title} 
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+            <Image
+              src={image}
+              alt={title}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-500"
             />
           ) : (
             <div className="w-full h-full flex items-center justify-center">
