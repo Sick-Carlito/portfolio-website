@@ -3,7 +3,7 @@
 import { useState } from 'react';
 import { Container, Section, Input, Textarea, Select, Button } from '@/components/ui';
 import { FadeIn, ScaleIn } from '@/components/animations';
-import { Mail, Linkedin, Github, MapPin, Clock, Phone, Briefcase } from 'lucide-react';
+import { Mail, Linkedin, Github, MapPin, Clock, Phone, Briefcase, Calendar } from 'lucide-react';
 import { siteConfig } from '@/data/siteConfig';
 import { socialLinks } from '@/data/social';
 import { CONTACT_FORM_TYPES } from '@/lib/constants';
@@ -101,7 +101,18 @@ export default function ContactPage() {
             <div className="lg:col-span-2">
               <ScaleIn delay={200}>
                 <div className="bg-white p-6 sm:p-8 lg:p-10 rounded-xl shadow-lg">
-                  <h2 className="text-2xl sm:text-3xl font-bold mb-6">Send a Message</h2>
+                  <div className="flex items-center justify-between mb-6 flex-wrap gap-3">
+                    <h2 className="text-2xl sm:text-3xl font-bold">Send a Message</h2>
+                    <a
+                      href="https://calendly.com/carledwards053"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 hover:bg-blue-100 text-blue-700 rounded-lg text-sm font-semibold transition-colors border border-blue-200"
+                    >
+                      <Calendar className="w-4 h-4" />
+                      Or book a call instead
+                    </a>
+                  </div>
                   
                   {submitStatus === 'success' && (
                     <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg text-green-800">
@@ -232,6 +243,24 @@ export default function ContactPage() {
                     </div>
                   </div>
                 </div>
+              </ScaleIn>
+
+              {/* Calendly Booking */}
+              <ScaleIn delay={500}>
+                <a
+                  href="https://calendly.com/carledwards053"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 bg-blue-600 hover:bg-blue-700 p-5 rounded-xl text-white transition-all hover:scale-105 hover:shadow-lg"
+                >
+                  <div className="w-10 h-10 bg-white/20 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Calendar className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <p className="font-bold text-sm">Book a Free Discovery Call</p>
+                    <p className="text-blue-100 text-xs mt-0.5">Pick a time that works for you →</p>
+                  </div>
+                </a>
               </ScaleIn>
 
               {/* Upwork CTA */}
