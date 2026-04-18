@@ -2,16 +2,14 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { navigationLinks } from '@/data/navigation';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui';
 
-interface NavigationProps {
-  currentPath?: string;
-}
-
-export const Navigation = ({ currentPath = '/' }: NavigationProps) => {
+export const Navigation = () => {
+  const pathname = usePathname();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -48,9 +46,9 @@ export const Navigation = ({ currentPath = '/' }: NavigationProps) => {
 
   const isActive = (href: string) => {
     if (href === '/') {
-      return currentPath === '/';
+      return pathname === '/';
     }
-    return currentPath.startsWith(href);
+    return pathname.startsWith(href);
   };
 
   return (
@@ -78,9 +76,9 @@ export const Navigation = ({ currentPath = '/' }: NavigationProps) => {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  'font-medium transition-all hover:scale-105 text-sm lg:text-base',
+                  'font-medium transition-all hover:scale-105 text-sm lg:text-base relative pb-1',
                   isActive(item.href)
-                    ? 'text-blue-600'
+                    ? 'text-blue-600 after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 after:bg-blue-600 after:rounded-full'
                     : 'text-slate-600 hover:text-slate-900'
                 )}
               >
